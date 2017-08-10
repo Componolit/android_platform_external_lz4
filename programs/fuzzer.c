@@ -972,7 +972,7 @@ void FUZ_unitTests(void)
         {
             XXH64_state_t crcOrigState;
             XXH64_state_t crcNewState;
-            const U64 totalTestSize = 6ULL << 30;
+            const U64 totalTestSize = 6ULL << 20;
             U64 totalTestDone = 0;
             size_t oldStart = 0;
             size_t oldSize  = 0;
