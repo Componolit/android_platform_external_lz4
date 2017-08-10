@@ -681,7 +681,7 @@ char testCompressed[testCompressedSize];
 char testVerify[testInputSize];
 char ringBuffer[ringBufferSize];
 
-static void FUZ_unitTests(void)
+void FUZ_unitTests(void)
 {
     const unsigned testNb = 0;
     const unsigned seed   = 0;
