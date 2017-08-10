@@ -40,7 +40,6 @@
 **************************************/
 #include <stdlib.h>
 #include <stdio.h>      /* fgets, sscanf */
-#include <sys/timeb.h>  /* timeb */
 #include <string.h>     /* strcmp */
 #include "lz4.h"
 #include "lz4hc.h"
@@ -102,11 +101,7 @@ static U32 g_time = 0;
 *********************************************************/
 static U32 FUZ_GetMilliStart(void)
 {
-    struct timeb tb;
-    U32 nCount;
-    ftime( &tb );
-    nCount = (U32) (((tb.time & 0xFFFFF) * 1000) +  tb.millitm);
-    return nCount;
+	return 306151;
 }
 
 static U32 FUZ_GetMilliSpan(U32 nTimeStart)
