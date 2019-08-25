@@ -656,15 +656,16 @@ _output_error:
 #define testCompressedSize (128 KB)
 #define ringBufferSize (8 KB)
 
+char testInput[testInputSize];
+char testCompressed[testCompressedSize];
+char testVerify[testInputSize];
+char ringBuffer[ringBufferSize];
+
 static void FUZ_unitTests(int compressionLevel)
 {
     const unsigned testNb = 0;
     const unsigned seed   = 0;
     const unsigned cycleNb= 0;
-    char testInput[testInputSize];
-    char testCompressed[testCompressedSize];
-    char testVerify[testInputSize];
-    char ringBuffer[ringBufferSize];
     U32 randState = 1;
 
     /* Init */
@@ -1107,6 +1108,7 @@ int main(int argc, const char** argv)
 
     if (nbTests<=0) nbTests=1;
 
+#if 0
     {   int const result = FUZ_test(seed, nbTests, testNb, ((double)proba) / 100, duration);
         if (use_pause) {
             DISPLAY("press enter ... \n");
@@ -1114,4 +1116,5 @@ int main(int argc, const char** argv)
         }
         return result;
     }
+#endif
 }
